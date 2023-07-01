@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "./logo.png";
+import 'bootstrap/dist/css/bootstrap.css';
+
 function Navbar() {
     return (
         <div>

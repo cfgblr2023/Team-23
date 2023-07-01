@@ -3,6 +3,11 @@ import {
   loginController,
   registerController,
   getallVoln,
+  dashboard,
+  pendingApproval,
+  setApproval,
+
+
 } from "../controllers/adminController.js";
 import { get } from "mongoose";
 
@@ -15,5 +20,10 @@ router.post("/register",registerController);
 router.post("/login", loginController);
 
 router.get("/getallvolunteers", getallVoln);
+router.get("/dashboard", dashboard);
+router.get("/pendingapproval", pendingApproval);
+router.post("/setapproval", setApproval);
+
+
 //export
 export default router;

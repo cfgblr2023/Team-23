@@ -30,6 +30,14 @@ const volunteerSchema = new mongoose.Schema(
       reason :{
 
         type:String
+      },
+      location:{
+        type:String,
+        required:[true,"location is required here"]
+      },
+      status:{
+        type:String,
+        default:"pending"
       }
     // expertise1: {
     //   type: String,

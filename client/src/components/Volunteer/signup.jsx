@@ -8,6 +8,7 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [expertises, setExpertises] = useState([]);
+    const [location, setlocation] = useState('');
     const [file, setFile] = useState(null);
 
     const handleNameChange = (e) => {
@@ -34,6 +35,11 @@ const Signup = () => {
         const selectedExpertises = Array.from(e.target.selectedOptions, (option) => option.value);
         setExpertises(selectedExpertises);
     };
+
+    const handleLocationChange = (e) => {
+        setConfirmPassword(e.target.value);
+    };
+
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
@@ -48,6 +54,7 @@ const Signup = () => {
         console.log('Password:', password);
         console.log('Confirm Password:', confirmPassword);
         console.log('Expertises:', expertises);
+        console.log('location:', location);
         // Reset the form fields
         setName('');
         setEmail('');
@@ -112,6 +119,17 @@ const Signup = () => {
                         id="confirmPassword"
                         value={confirmPassword}
                         onChange={handleConfirmPasswordChange}
+                        placeholder="Confirm your password"
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="location">Enter Location</label>
+                    <input
+                        type="location"
+                        id="location"
+                        value={location}
+                        onChange={handleLocationChange}
                         placeholder="Confirm your password"
                         required
                     />

@@ -1,9 +1,10 @@
 import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer class="footer">
+        <><div className='Paddingsample'></div><footer class="footer">
             <div class="container1">
                 <div class="row">
                     <div class="footercol">
@@ -25,15 +26,15 @@ const Footer = () => {
                     <div class="footercol">
                         <h4>Social-links</h4>
                         <div class="social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><FaFacebookF /></a>
+                            <a href="#"><FaTwitter /></a>
+                            <a href="#"><FaInstagram /></a>
+                            <a href="#"><FaLinkedinIn /></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer></>
     );
 }
 

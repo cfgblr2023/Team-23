@@ -1,0 +1,42 @@
+.statistics-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.statistics-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    /* Black */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+    /* Black */
+}
+
+th {
+    background-color: #ffcc00;
+    /* Yellow */
+    color: #000;
+    /* Black */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+    /* Lighter yellow */
+}
+
+tbody tr:hover {
+    background-color: #ffeb99;
+    /* Light yellow */
+}

@@ -1,11 +1,11 @@
 import React from "react";
+import Signup from "./components/Volunteer/signup";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Team 23</h1>
+    <div>
+      <Signup />
     </div>
   );
 }
-
 export default App;

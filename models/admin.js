@@ -23,6 +23,9 @@ const adminSchema = new mongoose.Schema(
       type: String,
       default: "Bangalore",
     },
+    notification :{
+      type:Array
+    }
   },
   { timestamps: true }
 );
@@ -37,7 +40,7 @@ const adminSchema = new mongoose.Schema(
 
 // //compare password
 adminSchema.methods.comparePassword = async function (userPassword) {
-  const isMatch = await bcrypt.compare(userPassword, this.password);
+  const isMatch = await userPassword==this.password;
   return isMatch;
 };
 

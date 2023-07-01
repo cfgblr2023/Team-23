@@ -2,25 +2,25 @@
 import admin from "../models/admin.js";
 
 
-export const registerController = async (req, res, next) => {
+export const registerController = async (req, res) => {
 
   try {
     const { name, email, password } = req.body;
   //validate
   if (!name) {
-    next("name is required");
+    res.send({error:'Name is required'});
   }
   if (!email) {
-    next("email is required");
+    res.send({error:'email is required'});
   }
   if (!password) {
-    next("password is required and greater than 6 character");
+    res.send({error:'password is required'});
   }
   const exisitingUser = await admin.findOne({ email });
   if (exisitingUser) {
-    next("Email Already Register Please Login");
+    res.send({error:'user already registered here'});
   }
-  const user = await admin.create({ name, email, password });
+  const user = await admin.create(req.body);
   //token
 //   const token = user.createJWT();
   res.status(201).send({
@@ -44,30 +44,70 @@ export const registerController = async (req, res, next) => {
   
 };
 
-export const loginController = async (req, res, next) => {
-  const { email, password } = req.body;
-  //validation
-  if (!email || !password) {
-    next("Please Provide All Fields");
-  }
-  //find user by email
-  const user = await admin.findOne({ email }).select("+password");
-  if (!user) {
-    next("Invalid Useraname or password");
-  }
-  //compare password
-  const isMatch = await user.comparePassword(password);
-  if (!isMatch) {
-    next("Invalid Useraname or password");
-  }
-  user.password = undefined; // undefined so that password is not received by frontend
-//   const token = user.createJWT();
-  res.status(200).json({
-    success: true,
-    message: "Login SUccessfully",
-    user,
-    // token,
-  });
+export const loginController = async (req, res) => {
+  try {
+        
+    const {email,password} = req.body;
+    
+    //validation
+    if(!email || !password){
+
+        res.status(404).send({
+            success:false,
+        message:'Invalid email or password',
+        })
+    }
+    
+    //check user
+    const user = await admin.findOne({email})
+    // console.log(user)
+    if(!user){
+        return res.status(404).send({
+            success : false,
+            message : 'Email is not registered',
+        })
+    }
+
+    
+
+    // const match = await comparePassword(password,user.password)
+    const match = password==user.password
+    
+    // console.log(match)
+    if(!match){
+
+        return res.status(200).send({
+            success:false,
+            message:'Invalid Password',
+        })
+    }
+
+    //Create token after all conditions are checked 
+    // const token = await JWT.sign({_id: user._id},process.env.JWT_SECRET,{
+    //     expiresIn : "7d",
+    // });
+    res.status(200).send({
+
+        success:true,
+        message:"login successfully",
+        user : {
+            name : user.name, 
+            email : user.email,
+            phone: user.phone,
+            address : user.address
+        },
+        // token,
+    });
+     
+} catch (error) {
+    console.log(error)
+    res.send({
+        success:false,
+        message:'Login did not happen',
+        error
+    })
+}
+
 };
 
 

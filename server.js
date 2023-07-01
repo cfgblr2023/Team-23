@@ -10,8 +10,8 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 
 // routes import
-
 import adminRoutes from "./routes/adminRoutes.js";
+import volnRoutes from "./routes/volnRoutes.js"
 
 //Dot ENV config
 dotenv.config();
@@ -32,7 +32,8 @@ app.use(cors());
 app.use(morgan("dev"));
 
 //routes
-app.use("/api/v1/auth", adminRoutes);
+app.use("/api/v1/authAdmin", adminRoutes);
+app.use("/api/v1/authVoln", volnRoutes);
 
 
 

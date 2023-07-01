@@ -121,11 +121,25 @@ export const getallevents = async (req,res) =>{
 }
 
 export const applyforevent = async(req,res) =>{
-
-    const {name } = req.body;
-    const event = eventSchema.find({name});
-
-    console.log(event)
+    try {
+        const {name,volEmail } = req.body;
+    // const event = eventSchema.find({name});
+        const x = await eventSchema.find({name:name})
+        const y = x[0]._id.toString()
+    const event = await eventSchema.findByIdAndUpdate(
+        y,
+        { $push: { registeredvol: volEmail } },
+        { new: true }
+      );
+        res.status(200).send({
+            message:"Event data is updated",
+            
+        })
+    } catch (error) {
+        console.log(error)
+    }
+    
+    // console.log(event)
     // const x = event[0]._id.toString()
 
     

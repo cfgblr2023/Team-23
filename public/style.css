@@ -1,0 +1,13 @@
+.navbar-link{
+    text-decoration: none;
+    color:black
+}
+
+.navbar-link:hover{
+    font-size: 1.1rem;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}

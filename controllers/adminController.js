@@ -1,5 +1,6 @@
 // import admin from "../models/admin.js";
 import admin from "../models/admin.js";
+import volunteerSchema from "../models/volunteerSchema.js";
 
 
 export const registerController = async (req, res) => {
@@ -109,5 +110,30 @@ export const loginController = async (req, res) => {
 }
 
 };
+
+export const getallVoln = async (req,res)=>{
+
+  try {
+    const user = await volunteerSchema.find({});
+
+    res.status(201).send({
+      success:true,
+      // user:{
+      //   name: user.name,
+      //   email: user.email,
+      // phoneNumber: user.phoneNumber,
+      // expertise:user.expertise
+      // }
+      user
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(400).send({
+      error
+    })
+  }
+ 
+
+}
 
 

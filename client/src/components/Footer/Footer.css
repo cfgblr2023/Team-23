@@ -1,0 +1,80 @@
+.footer {
+    height: 200px;
+    background-color: rgb(42, 9, 73);
+    padding: 0;
+}
+
+.footercol ul {
+    list-style: none;
+}
+
+.footercol {
+    width: 25%;
+    padding: 0 11px;
+    margin-left: 90px;
+}
+
+.container1 {
+    max-width: 1170px;
+}
+
+.footer .container1 .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footercol h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footercol h4::before {
+    background-color: var(--footerlink-color) !important;
+    height: 2px !important;
+    width: 100px !important;
+}
+
+.footercol ul li,
+.footercol span {
+    color: rgb(229, 247, 250);
+}
+
+.footercol ul li:not(:last-child) {
+    margin-bottom: 3px;
+}
+
+.footercol .social a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: rgb(185, 243, 252);
+    transition: all 0.5s ease;
+}
+
+.footercol .social a:hover {
+    color: rgb(202, 202, 202);
+    background-color: var(--footerlink-color);
+}
+
+
+@media (max-width: 767px) {
+    .footercol {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footercol {
+        width: 100%;
+    }
+}

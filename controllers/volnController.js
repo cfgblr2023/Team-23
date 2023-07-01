@@ -1,4 +1,5 @@
 // import volunteerSchema from "../models/volunteerSchema.js";
+import eventSchema from "../models/eventSchema.js";
 import volunteerSchema from "../models/volunteerSchema.js";
 
 
@@ -109,5 +110,33 @@ export const loginController = async (req, res) => {
     }
   
 };
+
+export const getallevents = async (req,res) =>{
+
+    const events = eventSchema.find({status:"Progress"});
+
+    res.status(200).send({
+        events
+    })
+}
+
+export const applyforevent = async(req,res) =>{
+
+    const {name } = req.body;
+    const event = eventSchema.find({name});
+
+    console.log(event)
+    // const x = event[0]._id.toString()
+
+    
+
+
+
+
+
+
+
+}
+
 
 

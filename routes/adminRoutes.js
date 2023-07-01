@@ -2,10 +2,12 @@ import express from "express";
 import {
   loginController,
   registerController,
-  getallVoln,
+  getapprovedVoln,
   dashboard,
   pendingApproval,
   setApproval,
+  createEventController,
+  approvedvol,
 
 
 } from "../controllers/adminController.js";
@@ -19,10 +21,12 @@ router.post("/register",registerController);
 // LOGIN || POST
 router.post("/login", loginController);
 
-router.get("/getallvolunteers", getallVoln);
+router.get("/getapprovedvolunteers", getapprovedVoln);
 router.get("/dashboard", dashboard);
 router.get("/pendingapproval", pendingApproval);
+router.get("/approvedvolunteers",approvedvol);
 router.post("/setapproval", setApproval);
+router.post("/eventadd", createEventController);
 
 
 //export

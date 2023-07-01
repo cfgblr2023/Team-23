@@ -1,5 +1,7 @@
 import express from "express";
 import {
+    applyforevent,
+    getallevents,
   loginController,
   registerController,
 } from "../controllers/volnController.js";
@@ -11,6 +13,10 @@ router.post("/register",registerController);
 
 // LOGIN || POST
 router.post("/login", loginController);
+router.post("/getallevents", getallevents);
+router.post("/applyforevent", applyforevent);
+
+
 
 //export
 export default router;

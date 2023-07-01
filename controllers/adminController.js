@@ -1,7 +1,7 @@
 // import admin from "../models/admin.js";
 import admin from "../models/admin.js";
 import volunteerSchema from "../models/volunteerSchema.js";
-
+import eventSchema from "../models/eventSchema.js";
 
 export const registerController = async (req, res) => {
 
@@ -111,10 +111,10 @@ export const loginController = async (req, res) => {
 
 };
 
-export const getallVoln = async (req,res)=>{
+export const getapprovedVoln = async (req,res)=>{
 
   try {
-    const user = await volunteerSchema.find({});
+    const user = await volunteerSchema.find({ status: 'pending' });
 
     res.status(201).send({
       success:true,
@@ -138,74 +138,6 @@ export const getallVoln = async (req,res)=>{
 
 export const dashboard = async (req,res)=>{
 
-  // try {
-  //   const expert = ["teaching","organising","training","technical"];
-  //   const expertData = [];
-  //   // const organisation = new mongoose.Types.ObjectId(req.body.userId);
-  //   const organisation = await volunteerSchema.find({}).select({expertise});
-    
-  //   //get single blood group
-  //   await Promise.all(
-  //     bloodGroups.map(async (bloodGroup) => {
-  //       //COunt TOTAL IN
-  //       const totalIn = await inventoryModel.aggregate([
-  //         {
-  //           $match: {
-  //             expertise: teaching,
-              
-  //             organisation,
-  //           },
-  //         },
-  //         {
-  //           $group: {
-  //             _id: null,
-  //             total: { $sum: "$quantity" },
-  //           },
-  //         },
-  //       ]);
-  //       //COunt TOTAL OUT
-  //       const totalOut = await inventoryModel.aggregate([
-  //         {
-  //           $match: {
-  //             expertise: teaching,
-              
-  //             organisation,
-  //           },
-  //         },
-  //         {
-  //           $group: {
-  //             _id: null,
-  //             total: { $sum: "$quantity" },
-  //           },
-  //         },
-  //       ]);
-  //       //CALCULATE TOTAL
-  //       const availabeBlood =
-  //         (totalIn[0]?.total || 0) - (totalOut[0]?.total || 0);
-
-  //       //PUSH DATA
-  //       bloodGroupData.push({
-  //         bloodGroup,
-  //         totalIn: totalIn[0]?.total || 0,
-  //         totalOut: totalOut[0]?.total || 0,
-  //         availabeBlood,
-  //       });
-  //     })
-  //   );
-
-  //   return res.status(200).send({
-  //     success: true,
-  //     message: "Blood Group Data Fetch Successfully",
-  //     bloodGroupData,
-  //   });
-  // } catch (error) {
-  //   console.log(error);
-  //   return res.status(500).send({
-  //     success: false,
-  //     message: "Error In Bloodgroup Data Analytics API",
-  //     error,
-  //   });
-  // }
 
   const expertiseCounts = await volunteerSchema.aggregate([
     { $unwind: '$expertise' },
@@ -245,6 +177,18 @@ export const pendingApproval = async (req,res)=>{
   }
 
 }
+
+export const approvedvol = async (req,res)=>{
+  try {
+    const pendingVolunteers = await volunteerSchema.find({ status: 'approved' });
+    res.status(200).send(pendingVolunteers) 
+    ;
+  } catch (error) {
+    throw new Error('Error fetching pending volunteers');  
+  }
+
+}
+
 export const setApproval = async (req,res)=>{
   
 
@@ -273,6 +217,56 @@ export const setApproval = async (req,res)=>{
   }
 
 }
+
+export const createEventController = async (req, res) => {
+  try {
+      
+      const {name,date,location,time,description,noofvolunteers} = req.body;
+      if(!name)
+      {
+          res.send({error:'Name is required'})
+      }
+      if(!date)
+      {
+          res.send({error:'Date is required'})
+      }
+      if(!location)
+      {
+          res.send({error:'Location is required'})
+      }
+      if(!time)
+      {
+          res.send({error:'Time is required'})
+      }
+      if(!noofvolunteers)
+      {
+          res.send({error:'Number of volunteers is required'})
+      }
+      if(!description)
+      {
+          res.send({error:'Description is required'})
+      }
+      const event = await eventSchema.create( req.body);
+      res.status(201).send({
+          sucess: true,
+          message: "Event Created Successfully",
+          event: {
+              name: event.name,
+              date: event.date,
+              location: event.location,
+              time: event.time,
+              description: event.description,
+              noofvolunteers: event.noofvolunteers,
+              status: event.status,
+          },
+      });
+  } catch (error) {
+      console.log(error)
+      res.status(404).send({
+          error
+      })
+  }
+};
 
 
 

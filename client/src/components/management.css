@@ -1,0 +1,50 @@
+/* Events Section */
+#management{
+    margin: 34px;
+    display: flex;
+    align-items: center;
+}
+#management .box{ 
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgb(5, 5, 5);
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background: #fcb900;
+    margin-bottom: 20px;
+}
+
+/* management .box img{ 
+   height: 350px;
+   width:350px;
+} */
+
+#management .box p{
+    font-family: 'Bree Serif', serif;
+} 
+
+
+.h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 50px;
+    padding: 12px;
+    text-align: center;
+}
+
+.h-secondary{
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    padding: 12px;
+    text-align: center;
+}.center{
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    margin: 40px ;
+}
+.center:hover {
+    color: rgb(246, 245, 250);
+    background-color: #fdd054;
+    border: solid black;
+}

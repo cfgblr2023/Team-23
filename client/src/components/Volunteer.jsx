@@ -18,6 +18,8 @@ function Volunteer() {
         }
     };
 
+    
+
     useEffect(() => {
         getEvents();
     }, []);
@@ -38,13 +40,13 @@ function Volunteer() {
         <div>
             <Navbar />
             <hr />
-            <form action="http://localhost:8080/api/v1/authVoln/getallevents" method="get">
+            {/* <form action="http://localhost:8080/api/v1/authVoln/getallevents" method="get">
                 <select name="Events" onChange={handleChange}>
                     <option name="Events" value="All">All</option>
                     <option name="Events" value="Current">Current Events</option>
                     <option value="Upcoming"></option>
                 </select>
-            </form>
+            </form> */}
             <br />
             
             {   
@@ -55,7 +57,7 @@ function Volunteer() {
                             location={event.location}
                             date={event.date}
                             time={event.time}
-                            noOfvolunteers={event.noOfvolunteers}
+                            noOfvolunteers={event.noofvolunteers}
                             description={event.description}
                         />
                     )

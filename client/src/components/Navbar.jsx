@@ -13,7 +13,8 @@ function Navbar() {
             <a class = "navbar-link" href = "/">Home </a> &nbsp; | &nbsp;
             <a class = "navbar-link" href = "/Management">Management team</a> &nbsp; | &nbsp;
             <a class = "navbar-link" href = "/LogIn">Log In </a> &nbsp; | &nbsp;
-            <a class = "navbar-link" href = "/SignUp">Sign Up</a>
+            <a class = "navbar-link" href = "/SignUp">Sign Up</a>&nbsp; | &nbsp;
+            <a class = "navbar-link" href = "/Volunteerspage">Volunteer's page</a>
           </div>
         </div>
       </nav>

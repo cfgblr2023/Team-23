@@ -20,8 +20,8 @@ function Management() {
           </a>
         </div>
         <div class="box">
-          <a class="h-secondary center" href="">
-            Fundraiser
+          <a class="h-secondary center" href="/VolunteerAnalytics">
+            Volunteer analytics
           </a>
         </div>
       </div>

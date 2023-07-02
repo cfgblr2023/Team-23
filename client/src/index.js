@@ -20,6 +20,8 @@ import VolunteerAnalytics from './components/VolunteerAnalytics';
 import DisplayVolunteers from './components/DisplayVolunteers';
 import Volunteer from './components/Volunteer';
 import EventsVolunteer from "./components/EventsVolunteer"
+import Volunteerspage from "./components/Volunteerspage";
+import VolunteersRegistration from "./components/VolunteersRegistration";
 
 
 ReactDom.render(
@@ -36,6 +38,9 @@ ReactDom.render(
         <Route path = "/VolunteerAnalytics" element = {<VolunteerAnalytics />}></Route>
         <Route path = "/DisplayVolunteers" element = {<DisplayVolunteers />}></Route>
         <Route path = "/Volunteer" element = {<Volunteer />}></Route>
+        <Route path = "/VolunteerAnalytics" element = {<VolunteerAnalytics />}></Route>
+        <Route path = "/Volunteerspage" element = {<Volunteerspage />}></Route>
+        <Route path = "/VolunteersRegistration" element = {<VolunteersRegistration />} ></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

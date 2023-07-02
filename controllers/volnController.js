@@ -113,7 +113,7 @@ export const loginController = async (req, res) => {
 
 export const getallevents = async (req,res) =>{
 
-    const events = eventSchema.find({status:"Progress"});
+    const events = await eventSchema.find({status:"Progress"});
 
     res.status(200).send({
         events
@@ -125,9 +125,9 @@ export const applyforevent = async(req,res) =>{
         const {name,volEmail } = req.body;
     // const event = eventSchema.find({name});
         const x = await eventSchema.find({name:name})
-        const y = x[0]._id.toString()
+        // const y = x[0]._id.toString()
     const event = await eventSchema.findByIdAndUpdate(
-        y,
+        x,
         { $push: { registeredvol: volEmail } },
         { new: true }
       );

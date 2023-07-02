@@ -11,6 +11,8 @@ import Management from "./Management";
 import VolunteerAnalytics from "./VolunteerAnalytics";
 import DisplayVolunteers from "./DisplayVolunteers";
 import Volunteer from "./Volunteer";
+import Volunteerspage from "./Volunteerspage";
+import VolunteersRegistration from "./VolunteersRegistration";
 
 function App(){
     return <div>
@@ -24,7 +26,8 @@ function App(){
           <Route path = "/VolunteerAnalytics" element = {VolunteerAnalytics} />
           <Route path = "/DisplayVolunteers" element = {DisplayVolunteers} />
           <Route path = "/Volunteer" element = {Volunteer} />
-
+          <Route path = "/Volunteerspage" element = {Volunteerspage} />
+          <Route path = "/VolunteersRegistration"  element = {VolunteersRegistration}/>
         </Routes>
     </div>
 }

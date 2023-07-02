@@ -1,25 +1,29 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Chart } from 'react-google-charts';
+import axios from "axios";
 import './VolunteerAnalytics.css';
-const volunteerData = [
-    {
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        phone: '1234567890',
-        location: 'Location A',
-        expertise: ['General Subject', 'Technology Subjects'],
-    },
-    {
-        name: 'Jane Smith',
-        email: 'janesmith@example.com',
-        phone: '9876543210',
-        location: 'Location B',
-        expertise: ['Fund Raising', 'Managing'],
-    }]
-const VolunteerAnalytics = ({ volunteerData }) => {
-    // Extract location and expertise data from v olunteerData
-    const locations = volunteerData?.map((volunteer) => volunteer.location);
-    const expertise = volunteerData?.reduce(
+import Navbar from "./Navbar";
+
+const VolunteerAnalytics = () => {
+
+    const [volun, setVolun] = useState([]);
+    const getVolun = async () => {
+        try {
+            const { data } = await axios.get("http://localhost:8080/api/v1/authAdmin/approvedvolunteers");
+            console.log(data);
+            setVolun(data);
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
+    useEffect(() => {
+        getVolun();
+    }, []);
+
+    // Extract location and expertise data from volunteerData
+    const locations = volun.map((volunteer) => volunteer.location);
+    const expertise = volun.reduce(
         (acc, volunteer) => [...acc, ...volunteer.expertise],
         []
     );
@@ -43,8 +47,11 @@ const VolunteerAnalytics = ({ volunteerData }) => {
     const expertiseData = Object.entries(expertiseCount).map(([expertise, count]) => [expertise, count]);
 
     return (
+        <div>
+            <Navbar/>
         <div className="analytics-container">
-            <h2>Volunteer Analytics</h2>
+            <br />
+            <h2 style={{textAlign: 'center'}}>Volunteer Analytics</h2>
             <div className="chart">
                 <Chart
                     width={'100%'}
@@ -70,6 +77,7 @@ const VolunteerAnalytics = ({ volunteerData }) => {
                         backgroundColor: '#FFCC00', // Yellow
                     }}
                 />
+            </div>
             </div>
         </div>
     );

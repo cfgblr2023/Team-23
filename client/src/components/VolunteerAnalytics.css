@@ -1,0 +1,16 @@
+.analytics-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.analytics-container h2 {
+    color: #000;
+    /* Black */
+    margin-bottom: 20px;
+}
+
+.chart {
+    margin-bottom: 20px;
+}

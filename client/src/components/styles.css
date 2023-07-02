@@ -1,0 +1,96 @@
+.activityCard
+{
+    width: 20rem;
+    height: 20rem;
+    background-image:url("./test.jpg");
+    background-color: rgba(249, 203, 104, 0.658);
+}
+.image-overlay hr
+{
+    width: 50%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+.image-overlay:hover hr
+{
+    width: 75%;
+}
+.activityInfo
+{
+    text-align: center;
+    color: white;
+    padding-top: 6rem;
+}
+.img 
+{
+    width: 25rem;    
+    float: left;
+    margin: 5px;
+}
+.para
+{
+    text-align: justify;
+}
+
+
+
+
+
+
+
+.eventsCard
+{
+    background-color: #efefef;
+    width: 20rem;
+}
+.eventCardImage
+{
+    object-fit: cover;
+    width: 20rem;
+}
+.eventCardInfo
+{
+    padding: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #686654;
+}
+.placeEventCards
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+gap: 0.5rem;
+}
+
+
+.navbar-link{
+    text-decoration: none;
+    color:black
+}
+
+.navbar-link:hover{
+    font-size: 1.1rem;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}
+
+.analytics-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.analytics-container h2 {
+    color: #000;
+    /* Black */
+    margin-bottom: 20px;
+}
+
+.chart {
+    margin-bottom: 20px;
+}

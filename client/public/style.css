@@ -1,0 +1,283 @@
+.navbar-link{
+    text-decoration: none;
+    color:black
+}
+
+.navbar-link:hover{
+    font-size: 1.1rem;
+    color: #FCBC45;
+}
+
+.logo{
+    height: 70px;
+    width: 70px;
+}
+
+/* .donate{
+    position : fixed
+} */
+
+.fund{
+    text-align: center;
+    padding:5% 10% 10% 10%;
+}
+
+.donate{
+    text-align: center;
+    size: 2rem;
+    padding:20px;
+    background-color: #000;
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.activityCard
+{
+    width: 20rem;
+    height: 20rem;
+    background-image:url("./test.jpg");
+    background-color: rgba(249, 203, 104, 0.658);
+}
+.image-overlay hr
+{
+    width: 70%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+}
+.image-overlay:hover hr
+{
+    width: 90%;
+}
+
+.image-overlay{
+
+}
+
+.activityInfo
+{
+    text-align: center;
+    color: white;
+    padding-top: 6rem;
+}
+
+
+#images{
+    width: 100%;
+}
+
+.eventsCard
+{
+    background-color: #efefef;
+    width: 20rem;
+}
+.eventCardImage
+{
+    object-fit: cover;
+    width: 20rem;
+}
+.eventCardInfo
+{
+    padding: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #686654;
+}
+.placeEventCards
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+gap: 0.5rem;
+}
+
+.homecard{
+    padding:5%;
+}
+
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    /* Yellow */
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: brown;
+    /* Black */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #8b4513;
+    /* Darker brown */
+}
+
+.form-group input,
+.form-group select {
+    width: 95%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #000;
+}
+
+
+
+.signup{
+    padding:20px;
+    background-color: antiquewhite;
+}
+
+#button{
+    size: 2rem;
+}
+
+.row1{
+    margin:20px;
+    padding: 30px;
+}
+.col1{
+    margin-left: 60px;
+    margin-right: 60px;
+    background-color: white;
+}
+#heading{
+    font-size: 30px;
+    text-transform: capitalize;
+    padding: 0px;
+    margin: 0px;
+}
+#heading1{
+    font-size: 60px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+#images{
+    height: 70vh;
+    /* background-image: url("https://lampeducationtrust.com/wp-content/uploads/2022/08/aubergine-e1611195670454.jpg"); */
+    width: 100%;
+    margin-top: 0vh;
+    opacity: 1.4;
+}
+#smallimages{
+    height: 100%;
+    width: 100%;
+}
+#about{
+    text-align: center;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+.container1{
+    position: relative;
+    text-align: center;
+    color: #fcb900;
+}
+#writing{
+    text-align: justify;
+}
+#writing1{
+    text-align: center;
+}
+#writing2{
+    text-align: justify;
+}
+.container2{
+    background-color: #fcb900;
+    margin-top: 0px;
+    width: 100%;
+}
+#smallheadings{
+    text-align: left;
+}
+
+
+
+/* Events Section */
+/* #management{
+    margin: 34px;
+    display: flex;
+    align-items: center;
+}
+#management .box{
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgb(5, 5, 5);
+    padding: 34px;
+    margin: 2px 55px;
+    border-radius: 28px;
+    background: #fcb900;
+    margin-bottom: 20px;
+} */
+
+/* management .box img{
+   height: 350px;
+   width:350px;
+} */
+
+/* #management .box p{
+    font-family: 'Bree Serif', serif;
+} */
+
+/* .btn:hover {
+    color: black;
+    background-color: whitesmoke;
+    border: solid black;
+} */
+
+/* .btn {
+    margin: 140px ;
+    background-color: #fdd054;
+    padding: 7px ;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+} */
+
+/* .h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 50px;
+    padding: 12px;
+    text-align: center;
+}
+
+.h-secondary{
+    font-family: 'Bree Serif', serif;
+    font-size: 40px;
+    padding: 12px;
+    text-align: center;
+}
+.center {
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    margin: 40px ;
+}
+/* .center:hover {
+    color: rgb(246, 245, 250);
+    background-color: #fdd054;
+    border: solid black;
+} */ */
+

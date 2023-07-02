@@ -13,7 +13,7 @@ router.post("/register",registerController);
 
 // LOGIN || POST
 router.post("/login", loginController);
-router.post("/getallevents", getallevents);
+router.get("/getallevents", getallevents);
 router.post("/applyforevent", applyforevent);
 
 

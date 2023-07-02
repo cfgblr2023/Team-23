@@ -113,8 +113,8 @@ export const loginController = async (req, res) => {
 
 export const getallevents = async (req,res) =>{
 
-    const events = eventSchema.find({status:"Progress"});
-
+    const events = await eventSchema.find({status:'Progress'});
+    console.log(events)
     res.status(200).send({
         events
     })
@@ -131,9 +131,9 @@ export const applyforevent = async(req,res) =>{
         { $push: { registeredvol: volEmail } },
         { new: true }
       );
-        res.status(200).send({
+        res.status(200).send({  
             message:"Event data is updated",
-            
+
         })
     } catch (error) {
         console.log(error)

@@ -24,7 +24,7 @@ router.post("/login", loginController);
 router.get("/getapprovedvolunteers", getapprovedVoln);
 router.get("/dashboard", dashboard);
 router.get("/pendingapproval", pendingApproval);
-router.get("/approvedvolunteers",approvedvol);
+router.get("/approvedvolunteers",approvedvol);  
 router.post("/setapproval", setApproval);
 router.post("/eventadd", createEventController);
 

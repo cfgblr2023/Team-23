@@ -6,7 +6,7 @@ function DisplayVolunteers(props) {
     const [volun, setVolun] = useState([]);
     const getVolun = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8080/api/v1/authAdmin/pendingapproval");
+            const { data } = await axios.get("http://localhost:8080/api/v1/authAdmin/approvedvolunteers");
             console.log(data);
             setVolun(data);
         } catch (err) {
